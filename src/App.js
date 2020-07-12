@@ -5,17 +5,21 @@ import { Switch, Route } from 'react-router-dom';
 import { Home } from '../src/pages/Home';
 import { Detail } from '../src/pages/Details';
 import { NotFound } from '../src/pages/NotFound';
+import { FooterComponent } from '../src/component/Footer';
 
 
 class App extends Component {
   render(){
     return (
       <div className="App">
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/detail/:movieId' component={Detail}/>
-          <Route component={NotFound} />
-        </Switch>
+
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/detail/:movieId' component={Detail}/>
+            <Route component={NotFound} />
+          </Switch>            
+          <FooterComponent />
+
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { ButtonBackToHome } from '../component/ButtonBackToHome';
 
 const API_KEY= 'e68d08b1';
@@ -27,10 +26,6 @@ export class Detail extends Component{
         })
     }
     
-    _goBack() {
-        window.history.back();
-    }
-
     componentDidMount() {
         const { movieId } = this.props.match.params;
         this._fetchMovie({ id: movieId })
@@ -39,15 +34,30 @@ export class Detail extends Component{
 
         const { Title, Poster, Actors, Metascore, Plot} = this.state.movie;
         return(
-            
-            <div>
-                <ButtonBackToHome />
-                <br/><br/>
-                <h1>{Title}</h1>
-                <img src={Poster}/>
-                <h3>{Actors}</h3>
-                <span>{Metascore}</span>
-                <p>{Plot}</p>
+            <div className="tile is-ancient">
+                <div className="tile is-vertical is-parent is-8-desktop is-12-tablet">
+                    <div className="tile is-child">
+                        <h1 className="title"><u>{Title}</u></h1>
+                    </div>
+                    <div className="tile is-child">
+                        <h3 className="title">Actors</h3>
+                        <p className="subtitle">{Actors}</p>
+                    </div>
+                    <div className="tile is-child">
+                        <h3 className="title">Summary</h3>
+                        <p className="subtitle">{Plot}</p>
+                    </div>
+                    <div className="tile is-child">
+                        <h3 className="title">Score by Imdb</h3>
+                        <p className="subtitle">{Metascore}</p>
+                        <ButtonBackToHome/>
+                    </div>
+                </div>
+                <div className="tile is-parent is-vertical">
+                    <div className="tile is-child">
+                        <img src={Poster} />
+                    </div>
+                </div>
             </div>
         )
     }

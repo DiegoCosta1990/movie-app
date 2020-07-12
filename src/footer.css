@@ -1,0 +1,14 @@
+.fa {
+    padding: 20px;
+    font-size: 40px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 3px 2px;
+  }
+  .fa:hover {
+    opacity: 0.7;
+    color: cornsilk;
+  }
+
+  

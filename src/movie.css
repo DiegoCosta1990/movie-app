@@ -1,0 +1,10 @@
+.media-content div { 
+    color: aliceblue
+}
+.subtitle {
+    color:aliceblue;
+}
+img:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 50px grey;
+  }
